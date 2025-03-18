@@ -2,3 +2,7 @@ steps:
   # Copy the website files to the Cloud Storage bucket
   - name: 'gcr.io/cloud-builders/gsutil'
     args: ['-m', 'rsync', '-r', '-c', '-d', '.', 'gs://website-bucket-mdz']
+
+# Add these lines to your cloudbuild.yaml
+options:
+    logging: CLOUD_LOGGING_ONLY
